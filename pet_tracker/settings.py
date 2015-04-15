@@ -48,6 +48,9 @@ REST_FRAMEWORK = {
     'MAX_PAGINATE_BY': 100
 }
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

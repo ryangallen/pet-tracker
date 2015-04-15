@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="login">
+
+    {% if form.errors %}
+    <p class="error">
+        Your username and password didn't match. Please try again.
+    </p>
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}" class="small-width">
+        {% csrf_token %}
+
+        <p>
+            <label for="id_username">Username</label>
+            <input type="text" id="id_username" class="form-control" name="username"
+                   {% if form.errors %}value="{{ form.username.value }}"{% endif %}
+                   {% if not form.errors %}autofocus{% endif %} maxlength="254">
+        </p>
+        <p>
+            <label for="id_password">Password</label>
+            <input type="password" id="id_password" class="form-control" name="password"
+                   {% if form.errors %}autofocus{% endif %}>
+        </p>
+        <p class="clearfix">
+            <input type="submit" id="submit" class="button right" value="Login">
+            <input type="hidden" name="next" value="{{ next }}">
+        </p>
+    </form>
+</div>
+{% endblock content %}

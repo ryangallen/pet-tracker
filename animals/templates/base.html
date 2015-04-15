@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Tracker</title>
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bagpakk.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block prefix %}{% endblock prefix %}
+</head>
+<body>
+    <header>
+        <div class="wrap clearfix">
+            <h1 class="left">Pet Tracker</h1>
+            <nav class="right">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="button right">Logout</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <div id="content">
+        <div class="wrap">
+        {% block content %}{% endblock content %}
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrap"></div>
+    </footer>
+    {% block postfix %}{% endblock postfix %}
+</body>
+</html>

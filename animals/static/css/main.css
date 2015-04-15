@@ -1,0 +1,17 @@
+header{
+    background-color: #333;
+    padding: 10px 0 2px;
+}
+header h1{
+    color: #FFF;
+    margin: 0;
+}
+header nav{
+    margin-top: -1px;
+}
+form.small-width {
+    max-width: 370px;
+}
+form.small-width input[type="text"], form.small-width input[type="password"]{
+    width: 100%;
+}
