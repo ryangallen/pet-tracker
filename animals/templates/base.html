@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/bagpakk.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {% block prefix %}{% endblock prefix %}
 </head>
 <body>
     <header>
         <div class="wrap clearfix">
-            <h1 class="left">Pet Tracker</h1>
+            <h1 class="left">
+                <i class="fa fa-paw"></i> Pet Tracker
+            </h1>
             <nav class="right">
                 {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}" class="button right">Logout</a>
+                <a href="{% url 'logout' %}" class="button right">
+                    Logout
+                </a>
                 {% endif %}
             </nav>
         </div>
