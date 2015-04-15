@@ -1,0 +1,116 @@
+[
+{
+    "pk": 1,
+    "fields": {
+        "name": "Cat",
+        "scientific_name": "Felis Catus"
+    },
+    "model": "animals.animal"
+},
+{
+    "pk": 2,
+    "fields": {
+        "name": "Dog",
+        "scientific_name": "Canis lupus familiaris"
+    },
+    "model": "animals.animal"
+},
+{
+    "pk": 1,
+    "fields": {
+        "name": "Labrador Retriever",
+        "animal": 2
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 2,
+    "fields": {
+        "name": "German Shepherd",
+        "animal": 2
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 3,
+    "fields": {
+        "name": "Bulldog",
+        "animal": 2
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 4,
+    "fields": {
+        "name": "Pit bull",
+        "animal": 2
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 5,
+    "fields": {
+        "name": "Siberian Husky",
+        "animal": 2
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 6,
+    "fields": {
+        "name": "Birman",
+        "animal": 1
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 7,
+    "fields": {
+        "name": "Russian Blue",
+        "animal": 1
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 8,
+    "fields": {
+        "name": "Burmese",
+        "animal": 1
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 9,
+    "fields": {
+        "name": "Bombay",
+        "animal": 1
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 10,
+    "fields": {
+        "name": "Manx",
+        "animal": 1
+    },
+    "model": "animals.breed"
+},
+{
+    "pk": 1,
+    "fields": {
+        "name": "Fido",
+        "birthday": "2013-05-11",
+        "breed": 1
+    },
+    "model": "animals.pet"
+},
+{
+    "pk": 2,
+    "fields": {
+        "name": "Felix",
+        "birthday": "2011-11-01",
+        "breed": 9
+    },
+    "model": "animals.pet"
+}
+]
