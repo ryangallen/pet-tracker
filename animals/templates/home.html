@@ -11,7 +11,20 @@
 {% block ngapp %}ng-app="petTrackerApp" ng-controller="PetTrackerController"{% endblock ngapp %}
 
 {% block content %}
+<h2>Animals</h2>
+<ul>
+    <li ng-repeat="animal in animals">[[ animal.name ]]</li>
+</ul>
 
+<h2>Breeds</h2>
+<ul>
+    <li ng-repeat="breed in breeds">[[ breed.name ]]</li>
+</ul>
+
+<h2>Pets</h2>
+<ul>
+    <li ng-repeat="pet in pets">[[ pet.name ]]</li>
+</ul>
 {% endblock content %}
 
 {% block postfix %}

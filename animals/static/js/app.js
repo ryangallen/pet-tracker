@@ -1,7 +1,7 @@
 var petTrackerApp = angular.module('petTrackerApp', [
     'ngResource',
     'petTrackerControllers',
-    'petTrackerDirectives'
+    'petTrackerDirectives',
     'petTrackerServices'
 ]);
 
