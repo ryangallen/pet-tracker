@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block prefix %}
+<script src="{% static 'vendor/js/angular/angular.min.js' %}"></script>
+<script src="{% static 'vendor/js/angular/angular-resource.min.js' %}"></script>
+<script src="{% static 'vendor/js/angular/angular-route.min.js' %}"></script>
+<script src="{% static 'vendor/js/underscore.min.js' %}"></script>
+{% endblock prefix %}
+
+{% block ngapp %}ng-app="petTrackerApp" ng-controller="PetTrackerController"{% endblock ngapp %}
+
 {% block content %}
 
 {% endblock content %}
+
+{% block postfix %}
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/controllers.js' %}"></script>
+<script src="{% static 'js/directives.js' %}"></script>
+<script src="{% static 'js/services.js' %}"></script>
+{% endblock postfix %}

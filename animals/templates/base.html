@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Pet Tracker</title>
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bagpakk.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/css/bagpakk.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {% block prefix %}{% endblock prefix %}
 </head>
-<body>
+<body {% block ngapp %}{% endblock ngapp %}>
     <header>
         <div class="wrap clearfix">
             <h1 class="left">
