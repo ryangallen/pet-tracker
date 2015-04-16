@@ -2,7 +2,7 @@
     <p ng-if="!pets.length">The database is empty. Add some pets.</p>
 
     <ul class="inline-list left" ng-if="pets.length">
-        <li>Show:</li>
+        <li>Showing:</li>
         <li ng-repeat="animal in animals" ng-click="animal.showing=!animal.showing"
             ng-class="{'showing': animal.showing, 'not-showing': !animal.showing}">
             [[ animal.name ]]s
