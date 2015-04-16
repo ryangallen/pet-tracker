@@ -10,6 +10,10 @@ petTrackerControllers.controller('PetTrackerController', [
             $scope.ordering = $scope.ordering == prop ? "-" + prop : prop
         }
 
+        $scope.filterAnimal = function(pet){
+            return pet.breed.animal.showing;
+        }
+
         var animalsPromise = PetTrackerFactory.readAnimals().then(
             function(promise){$scope.animals = promise.data.results}
         );
@@ -22,6 +26,7 @@ petTrackerControllers.controller('PetTrackerController', [
 
         $q.all([animalsPromise, breedsPromise, petsPromise]).then(function(){
             _.each($scope.animals, function(animal){
+                animal.showing = true;
                 var animalBreeds = _.where($scope.breeds, {animal: animal.id});
                 _.each(animalBreeds, function(breed){
                     breed.animal = animal;

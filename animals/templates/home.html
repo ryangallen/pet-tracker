@@ -11,6 +11,14 @@
 {% block ngapp %}ng-app="petTrackerApp" ng-controller="PetTrackerController"{% endblock ngapp %}
 
 {% block content %}
+<ul class="inline-list">
+    <li>Show:</li>
+    <li ng-repeat="animal in animals" ng-click="animal.showing=!animal.showing"
+        ng-class="{'showing': animal.showing, 'not-showing': !animal.showing}">
+        [[ animal.name ]]s
+    </li>
+</ul>
+
 <table>
     <thead>
         <tr>
@@ -42,7 +50,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="pet in pets | orderBy: ordering">
+        <tr ng-repeat="pet in pets | orderBy: ordering | filter: filterAnimal">
             <td>[[ pet.id ]]</td>
             <td>[[ pet.name ]]</td>
             <td>[[ pet.breed.animal.name ]]</td>
