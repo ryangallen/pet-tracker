@@ -26,13 +26,14 @@
                         ng-show="!deletingPet">
                     Delete
                 </button>
-                <div ng-show="deletingPet" class="delete-verification">
+                <form ng-show="deletingPet" class="delete-verification">
                     <p>
                         You are about to delete [[ pet.name ]] forever. If you
                         are sure that's what you want to do, enter
                         <strong>"[[ pet.name ]]"</strong> and click "Delete".
                     </p>
-                    <input type="text" ng-model="deleteVerification">
+                    <input type="text" ng-model="deleteVerification"
+                           ng-show="deletingPet" autofocus>
                     <div class="text-right">
                         <button class="button danger" ng-click="deletePet()"
                                 ng-disabled="deleteVerification!=pet.name"
@@ -43,7 +44,7 @@
                             Cancel
                         </button>
                     </div>
-                </div>
+                </form>
             </td>
         </tr>
     </table>

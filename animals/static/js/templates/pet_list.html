@@ -7,7 +7,7 @@
         </li>
     </ul>
 
-    <table>
+    <table id="animals">
         <thead>
             <tr>
                 <th ng-class="{ascending: ordering=='id',
@@ -39,7 +39,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="pet in pets | orderBy: ordering | filter: filterAnimal"
-                ng-click="showPetDetails(pet)">
+                ng-click="showPetDetails(pet)" class="animal">
                 <td>[[ pet.id ]]</td>
                 <td>[[ pet.name ]]</td>
                 <td>[[ pet.breed.animal.name ]]</td>

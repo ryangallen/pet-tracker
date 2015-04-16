@@ -37,6 +37,12 @@ li.not-showing{
     background: none;
     border-color: #666666;
 }
+table#animals th, table#animals td{
+    padding: .5rem;
+}
+tr.animal:hover>td{
+    background: #eee;
+}
 *[ng-click]{
     cursor: pointer;
 }
