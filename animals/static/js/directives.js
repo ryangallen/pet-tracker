@@ -16,7 +16,8 @@ petTrackerDirectives
                     }
 
                     scope.filterAnimal = function(pet){
-                        return pet.breed.animal.showing;
+                        if (pet.breed.animal) return pet.breed.animal.showing;
+                        return false;
                     }
 
                     var animalsPromise = PetTrackerFactory.readAnimals().then(
@@ -80,16 +81,20 @@ petTrackerDirectives
                         PetTrackerFactory.createPet({
                             name: scope.form.pet.name,
                             breed: scope.form.pet.breed.id,
-                            birthday: scope.form.pet.birthday,
+                            birthday: scope.form.pet.birthday
+                                           .toISOString().slice(0, 10),
                         }).then(
                             function(promise){
+                                promise.data.animal = scope.form.pet.animal;
+                                promise.data.breed = scope.form.pet.breed;
+                                promise.data.showing = true;
+
                                 scope.pets.push(promise.data);
                                 scope.addingPet = false;
                                 scope.clearForm();
                             },
                             function(promise){
                                 scope.form.errors = promise.data
-                                console.log(scope.form);
                             }
                         );
                     }
