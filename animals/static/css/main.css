@@ -15,6 +15,10 @@ form.small-width {
 form.small-width input[type="text"], form.small-width input[type="password"]{
     width: 100%;
 }
+form div.error{
+    color: #e74c3c;
+    margin: -1em 0 -.5em;
+}
 ul.inline-list, ul.inline-list>li:first-child{
     margin-left: 0;
 }
@@ -76,6 +80,26 @@ th.ascending{
 }
 .container{
     padding: 2rem 0;
+}
+
+input[type="date"]{
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: #333333;
+    border: none;
+    line-height: inherit;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+input[type="date"]:focus{
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 .button[disabled="disabled"]{opacity: .5 !important;}

@@ -60,6 +60,7 @@ petTrackerDirectives
                 scope: {
                     animals: '=',
                     addingPet: '=',
+                    pets: '=',
                 },
                 link: function(scope){
                     scope.clearForm = function(){
@@ -70,9 +71,27 @@ petTrackerDirectives
                     }
                     scope.clearForm();
 
-                    scope.cancelAddingPet = function(){
+                    scope.cancelNewPet = function(){
                         scope.addingPet = false;
                         scope.clearForm();
+                    }
+
+                    scope.saveNewPet = function(){
+                        PetTrackerFactory.createPet({
+                            name: scope.form.pet.name,
+                            breed: scope.form.pet.breed.id,
+                            birthday: scope.form.pet.birthday,
+                        }).then(
+                            function(promise){
+                                scope.pets.push(promise.data);
+                                scope.addingPet = false;
+                                scope.clearForm();
+                            },
+                            function(promise){
+                                scope.form.errors = promise.data
+                                console.log(scope.form);
+                            }
+                        );
                     }
                 }
             }

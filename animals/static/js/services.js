@@ -19,6 +19,9 @@ petTrackerServices.factory('PetTrackerFactory', [
             readPets: function(){
                 return $http.get(endpoints.pets);
             },
+            createPet: function(values){
+                return $http.post(endpoints.pets, values);
+            },
             deletePet: function(id){
                 return $http.delete(endpoints.pets + id);
             },

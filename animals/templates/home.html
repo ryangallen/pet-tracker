@@ -13,7 +13,7 @@
 {% block content %}
 <pet-list ng-show="!focusedPet && !addingPet"></pet-list>
 <pet-form ng-show="!focusedPet && addingPet"
-          animals="animals" adding-pet="addingPet"></pet-form>
+          animals="animals" adding-pet="addingPet" pets="pets"></pet-form>
 <pet-details ng-show="focusedPet && !addingPet"
              pets="pets" pet="focusedPet"></pet-details>
 {% endblock content %}

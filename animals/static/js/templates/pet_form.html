@@ -1,6 +1,6 @@
 <div class="container small-width">
     <i class="fa fa-times right" title="Cancel new pet"
-       ng-click="cancelAddingPet()"></i>
+       ng-click="cancelNewPet()"></i>
 
     <div id="choose-animal" class="text-center" ng-show="!form.pet.animal">
         What type of animal would you like to add?
@@ -39,13 +39,19 @@
         <p>
             <label>Name</label>
             <input type="text" ng-model="form.pet.name" autofocus>
+            <div class="error" ng-repeat="error in form.errors.name">
+                [[ error ]]
+            </div>
         </p>
         <p>
             <label>Birthday</label>
-            <input type="text" ng-model="form.pet.birthday">
+            <input type="date" ng-model="form.pet.birthday">
+            <div class="error" ng-repeat="error in form.errors.birthday">
+                [[ error ]]
+            </div>
         </p>
         <p class="clearfix">
-            <button class="button right">Save</button>
+            <button class="button right" ng-click="saveNewPet()">Save</button>
         </p>
     </form>
 
