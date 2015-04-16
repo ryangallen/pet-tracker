@@ -14,11 +14,18 @@
     <header>
         <div class="wrap clearfix">
             <h1 class="left">
-                <i class="fa fa-paw"></i> Pet Tracker
+                <a href="/">
+                    <i class="fa fa-paw"></i> Pet Tracker
+                </a>
             </h1>
             <nav class="right">
+                {% if user.is_superuser %}
+                <a href="{% url 'admin:index' %}" class="button">
+                    Admin
+                </a>
+                {% endif %}
                 {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}" class="button right">
+                <a href="{% url 'logout' %}" class="button">
                     Logout
                 </a>
                 {% endif %}

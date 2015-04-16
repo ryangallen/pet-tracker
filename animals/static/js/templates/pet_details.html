@@ -33,8 +33,7 @@
                         are sure that's what you want to do, enter
                         <strong>"[[ pet.name ]]"</strong> and click "Delete".
                     </p>
-                    <input type="text" ng-model="deleteVerification"
-                           ng-show="deletingPet" autofocus>
+                    <input type="text" ng-model="deleteVerification" autofocus>
                     <div class="text-right">
                         <button class="button danger" ng-click="deletePet()"
                                 ng-disabled="deleteVerification!=pet.name"

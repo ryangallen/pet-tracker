@@ -3,8 +3,11 @@ header{
     padding: 10px 0 2px;
 }
 header h1{
-    color: #FFF;
     margin: 0;
+}
+header h1>a, header h1>a:hover, header h1>a:active{
+    color: #FFF;
+    text-decoration: none;
 }
 header nav{
     margin-top: -1px;
@@ -42,7 +45,7 @@ li.not-showing{
     border-color: #666666;
 }
 button#add-pet{
-    margin: 1.35em 0;
+    margin: 1.3em 0;
 }
 table#pets th, table#pets td{
     padding: .5rem;
