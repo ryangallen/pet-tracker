@@ -1,0 +1,23 @@
+<div class="container">
+    <i class="fa fa-times right" ng-click="focusedPet=null"></i>
+
+    <h2>[[ focusedPet.name ]]</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <td>[[ focusedPet.id ]]</td>
+        </tr>
+        <tr>
+            <th>Animal</th>
+            <td>[[ focusedPet.breed.animal.name ]]</td>
+        </tr>
+        <tr>
+            <th>Breed</th>
+            <td>[[ focusedPet.breed.name ]]</td>
+        </tr>
+        <tr>
+            <th>Birthday</th>
+            <td>[[ focusedPet.birthday | date ]]</td>
+        </tr>
+    </table>
+</div>

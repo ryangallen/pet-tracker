@@ -11,54 +11,8 @@
 {% block ngapp %}ng-app="petTrackerApp" ng-controller="PetTrackerController"{% endblock ngapp %}
 
 {% block content %}
-<ul class="inline-list">
-    <li>Show:</li>
-    <li ng-repeat="animal in animals" ng-click="animal.showing=!animal.showing"
-        ng-class="{'showing': animal.showing, 'not-showing': !animal.showing}">
-        [[ animal.name ]]s
-    </li>
-</ul>
-
-<table>
-    <thead>
-        <tr>
-            <th ng-class="{ascending: ordering=='id',
-                           descending: ordering=='-id'}"
-                ng-click="order('id')">
-                ID
-            </th>
-            <th ng-class="{ascending: ordering=='name',
-                           descending: ordering=='-name'}"
-                ng-click="order('name')">
-                Name
-            </th>
-            <th ng-class="{ascending: ordering=='breed.animal.name',
-                           descending: ordering=='-breed.animal.name'}"
-                ng-click="order('breed.animal.name')">
-                Animal
-            </th>
-            <th ng-class="{ascending: ordering=='breed.name',
-                           descending: ordering=='-breed.name'}"
-                ng-click="order('breed.name')">
-                Breed
-            </th>
-            <th ng-class="{ascending: ordering=='birthday',
-                           descending: ordering=='-birthday'}"
-                ng-click="order('birthday')">
-                Birthday
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="pet in pets | orderBy: ordering | filter: filterAnimal">
-            <td>[[ pet.id ]]</td>
-            <td>[[ pet.name ]]</td>
-            <td>[[ pet.breed.animal.name ]]</td>
-            <td>[[ pet.breed.name ]]</td>
-            <td>[[ pet.birthday | date ]]</td>
-        </tr>
-    </tbody>
-</table>
+<pet-list ng-show="!focusedPet"></pet-list>
+<pet-details ng-show="focusedPet"></pet-details>
 {% endblock content %}
 
 {% block postfix %}

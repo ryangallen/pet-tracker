@@ -47,3 +47,6 @@ th.ascending{
 }th.descending{
     text-decoration: overline;
 }
+.container{
+    padding: 2rem 0;
+}
