@@ -1,4 +1,52 @@
-<form>
-    <i class="fa fa-times right" ng-click="cancelAddingPet()"></i>
-    new pet form
-</form>
+<div class="container small-width">
+    <i class="fa fa-times right" title="Cancel new pet"
+       ng-click="cancelAddingPet()"></i>
+
+    <div id="choose-animal" class="text-center" ng-show="!form.pet.animal">
+        What type of animal would you like to add?
+
+        <ul>
+            <li class="button-big" ng-click="form.pet.animal=animal"
+                ng-repeat="animal in animals | orderBy: 'name'">
+                [[ animal.name ]]
+            </li>
+        </ul>
+    </div>
+
+    <div id="choose-breed" class="text-center"
+         ng-show="form.pet.animal && !form.pet.breed">
+        What breed?
+
+        <ul>
+            <li class="button-big" ng-click="form.pet.breed=breed"
+                ng-repeat="breed in form.pet.animal.breeds | orderBy: 'name'">
+                [[ breed.name ]]
+            </li>
+        </ul>
+    </div>
+
+    <form class="small-width" ng-show="form.pet.animal && form.pet.breed">
+        <p>
+            <label>Animal</label>
+            <input type="text" ng-model="form.pet.animal.name"
+                   disabled="disabled">
+        </p>
+        <p>
+            <label>Breed</label>
+            <input type="text" ng-model="form.pet.breed.name"
+                   disabled="disabled">
+        </p>
+        <p>
+            <label>Name</label>
+            <input type="text" ng-model="form.pet.name" autofocus>
+        </p>
+        <p>
+            <label>Birthday</label>
+            <input type="text" ng-model="form.pet.birthday">
+        </p>
+        <p class="clearfix">
+            <button class="button right">Save</button>
+        </p>
+    </form>
+
+</div>

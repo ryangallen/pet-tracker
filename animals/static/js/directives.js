@@ -32,11 +32,11 @@ petTrackerDirectives
                     $q.all([animalsPromise, breedsPromise, petsPromise]).then(function(){
                         _.each(scope.animals, function(animal){
                             animal.showing = true;
-                            var animalBreeds = _.where(scope.breeds, {animal: animal.id});
-                            _.each(animalBreeds, function(breed){
+                            animal.breeds = _.where(scope.breeds, {animal: animal.id});
+                            _.each(animal.breeds, function(breed){
                                 breed.animal = animal;
-                                var breedPets = _.where(scope.pets, {breed: breed.id});
-                                _.each(breedPets, function(pet){
+                                breed.pets = _.where(scope.pets, {breed: breed.id});
+                                _.each(breed.pets, function(pet){
                                     pet.breed = breed;
                                 });
                             });
@@ -62,8 +62,17 @@ petTrackerDirectives
                     addingPet: '=',
                 },
                 link: function(scope){
+                    scope.clearForm = function(){
+                        scope.form = {
+                            pet: {},
+                            errors: {}
+                        }
+                    }
+                    scope.clearForm();
+
                     scope.cancelAddingPet = function(){
                         scope.addingPet = false;
+                        scope.clearForm();
                     }
                 }
             }
