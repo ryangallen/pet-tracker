@@ -50,6 +50,25 @@ petTrackerDirectives
             }
         }
     ])
+    .directive('petForm', [
+        'PetTrackerFactory',
+        function(PetTrackerFactory){
+            return {
+                restrict: 'E',
+                templateUrl: "/static/js/templates/pet_form.html",
+                replace: true,
+                scope: {
+                    animals: '=',
+                    addingPet: '=',
+                },
+                link: function(scope){
+                    scope.cancelAddingPet = function(){
+                        scope.addingPet = false;
+                    }
+                }
+            }
+        }
+    ])
     .directive('petDetails', ['PetTrackerFactory',
         function(PetTrackerFactory){
             return {

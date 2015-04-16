@@ -11,8 +11,11 @@
 {% block ngapp %}ng-app="petTrackerApp" ng-controller="PetTrackerController"{% endblock ngapp %}
 
 {% block content %}
-<pet-list ng-show="!focusedPet"></pet-list>
-<pet-details ng-show="focusedPet" pets="pets" pet="focusedPet"></pet-details>
+<pet-list ng-show="!focusedPet && !addingPet"></pet-list>
+<pet-form ng-show="!focusedPet && addingPet"
+          animals="animals" adding-pet="addingPet"></pet-form>
+<pet-details ng-show="focusedPet && !addingPet"
+             pets="pets" pet="focusedPet"></pet-details>
 {% endblock content %}
 
 {% block postfix %}

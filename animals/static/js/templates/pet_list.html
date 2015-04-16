@@ -1,5 +1,7 @@
 <div>
-    <ul class="inline-list">
+    <p ng-if="!pets.length">The database is empty. Add some pets.</p>
+
+    <ul class="inline-list left" ng-if="pets.length">
         <li>Show:</li>
         <li ng-repeat="animal in animals" ng-click="animal.showing=!animal.showing"
             ng-class="{'showing': animal.showing, 'not-showing': !animal.showing}">
@@ -7,7 +9,11 @@
         </li>
     </ul>
 
-    <table id="animals">
+    <button id="add-pet" class="button primary right" ng-click="addingPet=true">
+        <i class="fa fa-plus"></i> Add a pet
+    </button>
+
+    <table id="pets" ng-if="pets.length">
         <thead>
             <tr>
                 <th ng-class="{ascending: ordering=='id',
@@ -39,7 +45,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="pet in pets | orderBy: ordering | filter: filterAnimal"
-                ng-click="showPetDetails(pet)" class="animal">
+                ng-click="showPetDetails(pet)" class="pet">
                 <td>[[ pet.id ]]</td>
                 <td>[[ pet.name ]]</td>
                 <td>[[ pet.breed.animal.name ]]</td>

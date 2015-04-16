@@ -37,10 +37,13 @@ li.not-showing{
     background: none;
     border-color: #666666;
 }
-table#animals th, table#animals td{
+button#add-pet{
+    margin: 1.35em 0;
+}
+table#pets th, table#pets td{
     padding: .5rem;
 }
-tr.animal:hover>td{
+tr.pet:hover>td{
     background: #eee;
 }
 *[ng-click]{
@@ -74,32 +77,17 @@ th.ascending{
 .container{
     padding: 2rem 0;
 }
-.button.plain{
-    background-color: #95a5a6;
-    -webkit-box-shadow: 0 4px 0 #7f8c8d;
-    box-shadow: 0 4px 0 #7f8c8d;
-}
-.button.plain:hover{
-    -webkit-box-shadow: 0 2px 0 #7f8c8d;
-    box-shadow: 0 2px 0 #7f8c8d;
-}
-.button.plain:active{
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-.button.danger{
-    background-color: #e74c3c;
-    -webkit-box-shadow: 0 4px 0 #c0392b;
-    box-shadow: 0 4px 0 #c0392b;
-}
-.button.danger:hover{
-    -webkit-box-shadow: 0 2px 0 #c0392b;
-    box-shadow: 0 2px 0 #c0392b;
-}
-.button.danger:active{
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-.button[disabled="disabled"]{
-    opacity: .5 !important;
-}
+
+.button[disabled="disabled"]{opacity: .5 !important;}
+
+.button.plain{background-color: #95a5a6;-webkit-box-shadow: 0 4px 0 #7f8c8d;box-shadow: 0 4px 0 #7f8c8d;}
+.button.plain:hover{-webkit-box-shadow: 0 2px 0 #7f8c8d;box-shadow: 0 2px 0 #7f8c8d;}
+.button.plain:active{-webkit-box-shadow: none;box-shadow: none;}
+
+.button.primary{background-color: #3498db;-webkit-box-shadow: 0 4px 0 #2980b9;box-shadow: 0 4px 0 #2980b9;}
+.button.primary:hover{-webkit-box-shadow: 0 2px 0 #2980b9;box-shadow: 0 2px 0 #2980b9;}
+.button.primary:active{-webkit-box-shadow: none;box-shadow: none;}
+
+.button.danger{background-color: #e74c3c;-webkit-box-shadow: 0 4px 0 #c0392b;box-shadow: 0 4px 0 #c0392b;}
+.button.danger:hover{-webkit-box-shadow: 0 2px 0 #c0392b;box-shadow: 0 2px 0 #c0392b;}
+.button.danger:active{-webkit-box-shadow: none;box-shadow: none;}
