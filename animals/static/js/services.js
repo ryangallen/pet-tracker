@@ -10,13 +10,13 @@ petTrackerServices.factory('PetTrackerFactory', [
         }
 
         return {
-            readAnimals: function(symbols){
+            readAnimals: function(){
                 return $http.get(endpoints.animals);
             },
-            readBreeds: function(symbols){
+            readBreeds: function(){
                 return $http.get(endpoints.breeds);
             },
-            readPets: function(symbols){
+            readPets: function(){
                 return $http.get(endpoints.pets);
             },
         }
