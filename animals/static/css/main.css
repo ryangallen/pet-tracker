@@ -15,6 +15,9 @@ form.small-width {
 form.small-width input[type="text"], form.small-width input[type="password"]{
     width: 100%;
 }
+ul.inline-list, ul.inline-list>li:first-child{
+    margin-left: 0;
+}
 li.showing, li.not-showing{
     font-family: Helvetica, Arial, sans-serif;
     padding: 1.618rem 3.236rem;
