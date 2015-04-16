@@ -12,7 +12,7 @@
 
 {% block content %}
 <pet-list ng-show="!focusedPet"></pet-list>
-<pet-details ng-show="focusedPet" pet="focusedPet"></pet-details>
+<pet-details ng-show="focusedPet" pets="pets" pet="focusedPet"></pet-details>
 {% endblock content %}
 
 {% block postfix %}

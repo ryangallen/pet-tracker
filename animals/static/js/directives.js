@@ -57,6 +57,7 @@ petTrackerDirectives
                 templateUrl: "/static/js/templates/pet_details.html",
                 replace: true,
                 scope: {
+                    pets: '=',
                     pet: '=',
                 },
                 link: function(scope){
@@ -68,9 +69,17 @@ petTrackerDirectives
                         scope.deleteVerification = null;
                     }
                     scope.deletePet = function(){
+                        var removeObject = function(list, properties){
+                            if (!list) return;
+                            var objectIndex = _.indexOf(list, _.findWhere(list, properties));
+                            list.splice(objectIndex, 1);
+                        }
+
                         PetTrackerFactory.deletePet(scope.pet.id).then(
                             function(promise){
-                                console.log(promise.data);
+                                removeObject(scope.pets, {id: scope.pet.id})
+                                scope.cancelDelete();
+                                scope.pet = null;
                             }
                         );
                     }

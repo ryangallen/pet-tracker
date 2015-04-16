@@ -6,9 +6,13 @@ var petTrackerApp = angular.module('petTrackerApp', [
 ]);
 
 petTrackerApp.config([
+    '$httpProvider',
     '$interpolateProvider',
     '$resourceProvider',
-    function($interpolateProvider, $resourceProvider){
+    function($httpProvider, $interpolateProvider, $resourceProvider){
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+        $httpProvider.useApplyAsync(true);
         $interpolateProvider.startSymbol('[[').endSymbol(']]');
         $resourceProvider.defaults.stripTrailingSlashes = false;
     }
