@@ -56,8 +56,24 @@ petTrackerDirectives
                 restrict: 'E',
                 templateUrl: "/static/js/templates/pet_details.html",
                 replace: true,
+                scope: {
+                    pet: '=',
+                },
                 link: function(scope){
-                    console.log('howdy');
+                    scope.verifyDelete = function(){
+                        scope.deletingPet = true;
+                    }
+                    scope.cancelDelete = function(){
+                        scope.deletingPet = false;
+                        scope.deleteVerification = null;
+                    }
+                    scope.deletePet = function(){
+                        PetTrackerFactory.deletePet(scope.pet.id).then(
+                            function(promise){
+                                console.log(promise.data);
+                            }
+                        );
+                    }
                 }
             }
         }

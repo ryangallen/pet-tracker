@@ -1,23 +1,50 @@
 <div class="container">
-    <i class="fa fa-times right" ng-click="focusedPet=null"></i>
+    <i class="fa fa-times right" ng-click="pet=null"></i>
 
-    <h2>[[ focusedPet.name ]]</h2>
-    <table>
+    <h2>[[ pet.name ]]</h2>
+    <table class="horizontal-table">
         <tr>
             <th>ID</th>
-            <td>[[ focusedPet.id ]]</td>
+            <td>[[ pet.id ]]</td>
         </tr>
         <tr>
             <th>Animal</th>
-            <td>[[ focusedPet.breed.animal.name ]]</td>
+            <td>[[ pet.breed.animal.name ]]</td>
         </tr>
         <tr>
             <th>Breed</th>
-            <td>[[ focusedPet.breed.name ]]</td>
+            <td>[[ pet.breed.name ]]</td>
         </tr>
         <tr>
             <th>Birthday</th>
-            <td>[[ focusedPet.birthday | date ]]</td>
+            <td>[[ pet.birthday | date ]]</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <button class="button danger" ng-click="verifyDelete()"
+                        ng-show="!deletingPet">
+                    Delete
+                </button>
+                <div ng-show="deletingPet" class="delete-verification">
+                    <p>
+                        You are about to delete [[ pet.name ]] forever. If you
+                        are sure that's what you want to do, enter
+                        <strong>"[[ pet.name ]]"</strong> and click "Delete".
+                    </p>
+                    <input type="text" ng-model="deleteVerification">
+                    <div class="text-right">
+                        <button class="button danger" ng-click="deletePet()"
+                                ng-disabled="deleteVerification!=pet.name"
+                                placeholder="[[ pet.name ]]">
+                            Delete
+                        </button>
+                        <button class="button plain" ng-click="cancelDelete()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </td>
         </tr>
     </table>
 </div>

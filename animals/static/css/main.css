@@ -50,6 +50,50 @@ th.ascending{
 }th.descending{
     text-decoration: overline;
 }
+.horizontal-table th{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    padding: .5rem 1rem .5rem 0;
+}
+.delete-verification{
+    border: 2px solid #c0392b;
+    padding: 15px;
+}
+.delete-verification p{
+    margin: 0;
+}
+.delete-verification input{
+    width: 100%;
+    margin: .5rem 0 1.5rem;
+}
 .container{
     padding: 2rem 0;
+}
+.button.plain{
+    background-color: #95a5a6;
+    -webkit-box-shadow: 0 4px 0 #7f8c8d;
+    box-shadow: 0 4px 0 #7f8c8d;
+}
+.button.plain:hover{
+    -webkit-box-shadow: 0 2px 0 #7f8c8d;
+    box-shadow: 0 2px 0 #7f8c8d;
+}
+.button.plain:active{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.button.danger{
+    background-color: #e74c3c;
+    -webkit-box-shadow: 0 4px 0 #c0392b;
+    box-shadow: 0 4px 0 #c0392b;
+}
+.button.danger:hover{
+    -webkit-box-shadow: 0 2px 0 #c0392b;
+    box-shadow: 0 2px 0 #c0392b;
+}
+.button.danger:active{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.button[disabled="disabled"]{
+    opacity: .5 !important;
 }
