@@ -7,18 +7,20 @@ class AnimalSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Animal
-        fields = ('name', 'scientific_name',)
+        fields = ('id', 'name', 'scientific_name',)
 
 
 class BreedSerializer(serializers.HyperlinkedModelSerializer):
+    animal = serializers.PrimaryKeyRelatedField(queryset=Animal.objects.all())
 
     class Meta:
         model = Breed
-        fields = ('name', 'animal',)
+        fields = ('id', 'name', 'animal',)
 
 
 class PetSerializer(serializers.HyperlinkedModelSerializer):
+    breed = serializers.PrimaryKeyRelatedField(queryset=Breed.objects.all())
 
     class Meta:
         model = Pet
-        fields = ('name', 'breed', 'birthday',)
+        fields = ('id', 'name', 'breed', 'birthday',)

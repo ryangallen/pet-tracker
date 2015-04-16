@@ -3,7 +3,6 @@ var petTrackerServices = angular.module('petTrackerServices', ['ngResource'])
 petTrackerServices.factory('PetTrackerFactory', [
     '$http',
     function($http){
-
         var endpoints = {
             animals: "/api/animals/",
             breeds: "/api/breeds/",
