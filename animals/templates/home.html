@@ -14,15 +14,35 @@
 <table>
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Animal</th>
-            <th>Breed</th>
-            <th>Birthday</th>
+            <th ng-class="{ascending: ordering=='id',
+                           descending: ordering=='-id'}"
+                ng-click="order('id')">
+                ID
+            </th>
+            <th ng-class="{ascending: ordering=='name',
+                           descending: ordering=='-name'}"
+                ng-click="order('name')">
+                Name
+            </th>
+            <th ng-class="{ascending: ordering=='breed.animal.name',
+                           descending: ordering=='-breed.animal.name'}"
+                ng-click="order('breed.animal.name')">
+                Animal
+            </th>
+            <th ng-class="{ascending: ordering=='breed.name',
+                           descending: ordering=='-breed.name'}"
+                ng-click="order('breed.name')">
+                Breed
+            </th>
+            <th ng-class="{ascending: ordering=='birthday',
+                           descending: ordering=='-birthday'}"
+                ng-click="order('birthday')">
+                Birthday
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="pet in pets">
+        <tr ng-repeat="pet in pets | orderBy: ordering">
             <td>[[ pet.id ]]</td>
             <td>[[ pet.name ]]</td>
             <td>[[ pet.breed.animal.name ]]</td>

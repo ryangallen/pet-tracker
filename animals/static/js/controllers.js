@@ -5,6 +5,11 @@ petTrackerControllers.controller('PetTrackerController', [
     '$q',
     'PetTrackerFactory',
     function($scope, $q, PetTrackerFactory){
+        $scope.ordering = "id";
+        $scope.order = function(prop){
+            $scope.ordering = $scope.ordering == prop ? "-" + prop : prop
+        }
+
         var animalsPromise = PetTrackerFactory.readAnimals().then(
             function(promise){$scope.animals = promise.data.results}
         );
