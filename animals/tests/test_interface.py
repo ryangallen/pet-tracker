@@ -3,7 +3,7 @@ import time
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-
+from selenium.webdriver.common.alert import Alert
 
 class FunctionalTest(StaticLiveServerTestCase):
     fixtures = ['animals.json', 'users.json',]
@@ -25,7 +25,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         self.browser.find_element_by_id('id_username').send_keys('admin')
         self.browser.find_element_by_id('id_password').send_keys('password')
         self.browser.find_element_by_id('submit').click()
-        time.sleep(.5)
+        time.sleep(.25)
 
         page_title = "Pet Tracker"
         self.assertEqual(self.browser.title, page_title)
@@ -108,7 +108,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         self.browser.find_element_by_id('add-name').send_keys('Balto')
         self.browser.find_element_by_id('add-birthday').send_keys('1919-09-02')
         self.browser.find_element_by_id('save-new-pet').click()
-        time.sleep(.5)
+        time.sleep(.25)
         self.assertEqual(self.get_text_for_items('#pet-list td'), [
             '1',
             'Fido',
@@ -134,7 +134,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         self.browser.find_element_by_id('add-name').send_keys('Salem')
         self.browser.find_element_by_id('add-birthday').send_keys('1924-10-31')
         self.browser.find_element_by_id('save-new-pet').click()
-        time.sleep(.5)
+        time.sleep(.25)
         self.assertEqual(self.get_text_for_items('#pet-list td'), [
             '1',
             'Fido',
@@ -159,5 +159,54 @@ class FunctionalTest(StaticLiveServerTestCase):
         ])
 
         # delete a dog
+        self.browser.find_element_by_id('pet-1').click()
+
+        verify_delete = self.browser.find_element_by_id('verify-delete')
+        delete_pet = self.browser.find_element_by_id('delete-pet')
+
+        verify_delete.click()
+        self.browser.find_element_by_css_selector(
+            '#delete-verification input').send_keys("Fido")
+        delete_pet.click()
+        Alert(self.browser).accept()
+        time.sleep(3)
+
+        self.assertEqual(self.get_text_for_items('#pet-list td'), [
+            '2',
+            'Felix',
+            'Cat',
+            'Bombay',
+            'Nov 1, 2011',
+            '3',
+            'Balto',
+            'Dog',
+            'Siberian Husky',
+            'Sep 2, 1919',
+            '4',
+            'Salem',
+            'Cat',
+            'Bombay',
+            'Oct 31, 1924',
+        ])
 
         # delete a cat
+        self.browser.find_element_by_id('pet-2').click()
+        verify_delete.click()
+        self.browser.find_element_by_css_selector(
+            '#delete-verification input').send_keys("Felix")
+        delete_pet.click()
+        Alert(self.browser).accept()
+        time.sleep(.25)
+
+        self.assertEqual(self.get_text_for_items('#pet-list td'), [
+            '3',
+            'Balto',
+            'Dog',
+            'Siberian Husky',
+            'Sep 2, 1919',
+            '4',
+            'Salem',
+            'Cat',
+            'Bombay',
+            'Oct 31, 1924',
+        ])

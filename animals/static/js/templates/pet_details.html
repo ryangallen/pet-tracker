@@ -26,11 +26,12 @@
         <tr>
             <th></th>
             <td>
-                <button class="button danger" ng-click="verifyDelete()"
+                <button id="verify-delete" class="button danger"
+                        ng-click="verifyDelete()"
                         ng-show="!deletingPet">
                     Delete
                 </button>
-                <form ng-show="deletingPet" class="delete-verification">
+                <form id="delete-verification" ng-show="deletingPet">
                     <p>
                         You are about to delete [[ pet.name ]] forever. If you
                         are sure that's what you want to do, enter
@@ -38,7 +39,8 @@
                     </p>
                     <input type="text" ng-model="deleteVerification" autofocus>
                     <div class="text-right">
-                        <button class="button danger" ng-click="deletePet()"
+                        <button id="delete-pet" class="button danger"
+                                ng-click="deletePet()"
                                 ng-disabled="deleteVerification!=pet.name"
                                 placeholder="[[ pet.name ]]">
                             Delete
