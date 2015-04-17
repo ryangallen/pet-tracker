@@ -78,6 +78,13 @@ petTrackerDirectives
                     }
 
                     scope.saveNewPet = function(){
+                        scope.form.errors = {};
+                        if (!scope.form.pet.name)
+                            scope.form.errors.name = ["A name is required"];
+                        if (!scope.form.pet.birthday)
+                            scope.form.errors.birthday = ["A birthday is required"];
+                        if (!_.isEmpty(scope.form.errors)) return;
+
                         PetTrackerFactory.createPet({
                             name: scope.form.pet.name,
                             breed: scope.form.pet.breed.id,
