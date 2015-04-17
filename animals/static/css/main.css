@@ -70,6 +70,11 @@ th.ascending{
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
     padding: .5rem 1rem .5rem 0;
 }
+.animal-scientific{
+    margin: 0 .5em;
+    color: #999;
+    text-transform: lowercase;
+}
 .delete-verification{
     border: 2px solid #c0392b;
     padding: 15px;

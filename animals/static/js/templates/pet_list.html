@@ -1,19 +1,22 @@
 <div>
     <p ng-if="!pets.length">The database is empty. Add some pets.</p>
 
-    <ul class="inline-list left" ng-if="pets.length">
-        <li>Showing:</li>
-        <li ng-repeat="animal in animals" ng-click="animal.showing=!animal.showing"
-            ng-class="{'showing': animal.showing, 'not-showing': !animal.showing}">
-            [[ animal.name ]]s
-        </li>
-    </ul>
+    <div class="clearfix">
+        <ul class="inline-list left" ng-if="pets.length">
+            <li>Showing:</li>
+            <li id="toggle-showing-[[ animal.name | lowercase ]]s"
+                ng-repeat="animal in animals" ng-click="animal.showing=!animal.showing"
+                ng-class="{'showing': animal.showing, 'not-showing': !animal.showing}">
+                [[ animal.name ]]s
+            </li>
+        </ul>
 
-    <button id="add-pet" class="button primary right" ng-click="addingPet=true">
-        <i class="fa fa-plus"></i> Add a pet
-    </button>
+        <button id="add-pet" class="button primary right" ng-click="addingPet=true">
+            <i class="fa fa-plus"></i> Add a pet
+        </button>
+    </div>
 
-    <table id="pets" ng-if="pets.length">
+    <table id="pet-list" ng-if="pets.length">
         <thead>
             <tr>
                 <th ng-class="{ascending: ordering=='id',
@@ -45,7 +48,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="pet in pets | orderBy: ordering | filter: filterAnimal"
-                ng-click="showPetDetails(pet)" class="pet">
+                ng-click="showPetDetails(pet)" class="pet" id="pet-[[ pet.id ]]">
                 <td>[[ pet.id ]]</td>
                 <td>[[ pet.name ]]</td>
                 <td>[[ pet.breed.animal.name ]]</td>

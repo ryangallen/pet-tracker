@@ -1,16 +1,19 @@
 <div class="container">
-    <i class="fa fa-times right" title="Close pet details"
+    <i class="fa fa-times right close-pet-details" title="Close pet details"
        ng-click="pet=null"></i>
 
     <h2>[[ pet.name ]]</h2>
-    <table class="horizontal-table">
+    <table class="horizontal-table pet-details">
         <tr>
             <th>ID</th>
             <td>[[ pet.id ]]</td>
         </tr>
         <tr>
             <th>Animal</th>
-            <td>[[ pet.breed.animal.name ]]</td>
+            <td>
+                [[ pet.breed.animal.name ]]
+                <em class="animal-scientific">[[ pet.breed.animal.scientific_name ]]</em>
+            </td>
         </tr>
         <tr>
             <th>Breed</th>

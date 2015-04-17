@@ -21,7 +21,9 @@ The petstore wants to be able to:
 * delete a dog
 * delete a cat
 
-As being part of the team that makes this system, you must create a Django project that has endpoints that can provide these functionalities.  Ideally, Django Rest Framework should be used.
+As being part of the team that makes this system, you must create a Django
+project that has endpoints that can provide these functionalities.  Ideally,
+Django Rest Framework should be used.
 
 ## Solution
 
@@ -49,3 +51,9 @@ a web browser at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 Run the tests with `python manage.py test`. See
 [Testing in Django](https://docs.djangoproject.com/en/1.8/topics/testing/) for
 more information.
+
+Funcational tests are built with
+[Selenium](https://selenium-python.readthedocs.org/) and run in
+[Mozilla Firefox](https://www.mozilla.org/en-US/firefox/products/). See the
+Selenium [Webdriver API](https://selenium-python.readthedocs.org/api.html) docs
+for testing in other browsers.
