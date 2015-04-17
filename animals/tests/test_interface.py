@@ -74,8 +74,6 @@ class FunctionalTest(StaticLiveServerTestCase):
         # view one dog
         pet1 = self.browser.find_element_by_id('pet-1')
         pet1.click()
-        time.sleep(.5)
-
         self.assertEqual(
             self.browser.find_element_by_tag_name('h2').text, "Fido")
         self.assertEqual(self.get_text_for_items('.pet-details td'), [
@@ -90,8 +88,6 @@ class FunctionalTest(StaticLiveServerTestCase):
         # view one cat
         pet2 = self.browser.find_element_by_id('pet-2')
         pet2.click()
-        time.sleep(.5)
-
         self.assertEqual(
             self.browser.find_element_by_tag_name('h2').text, "Felix")
         self.assertEqual(self.get_text_for_items('.pet-details td'), [
@@ -103,9 +99,64 @@ class FunctionalTest(StaticLiveServerTestCase):
         ])
         self.browser.find_element_by_class_name('close-pet-details').click()
 
+        add_pet = self.browser.find_element_by_id('add-pet')
+
         # add a dog
+        add_pet.click()
+        self.browser.find_element_by_id('add-dog').click()
+        self.browser.find_element_by_id('add-siberian-husky').click()
+        self.browser.find_element_by_id('add-name').send_keys('Balto')
+        self.browser.find_element_by_id('add-birthday').send_keys('1919-09-02')
+        self.browser.find_element_by_id('save-new-pet').click()
+        time.sleep(.5)
+        self.assertEqual(self.get_text_for_items('#pet-list td'), [
+            '1',
+            'Fido',
+            'Dog',
+            'Labrador Retriever',
+            'May 11, 2013',
+            '2',
+            'Felix',
+            'Cat',
+            'Bombay',
+            'Nov 1, 2011',
+            '3',
+            'Balto',
+            'Dog',
+            'Siberian Husky',
+            'Sep 2, 1919'
+        ])
 
         # add a cat
+        add_pet.click()
+        self.browser.find_element_by_id('add-cat').click()
+        self.browser.find_element_by_id('add-bombay').click()
+        self.browser.find_element_by_id('add-name').send_keys('Salem')
+        self.browser.find_element_by_id('add-birthday').send_keys('1924-10-31')
+        self.browser.find_element_by_id('save-new-pet').click()
+        time.sleep(.5)
+        self.assertEqual(self.get_text_for_items('#pet-list td'), [
+            '1',
+            'Fido',
+            'Dog',
+            'Labrador Retriever',
+            'May 11, 2013',
+            '2',
+            'Felix',
+            'Cat',
+            'Bombay',
+            'Nov 1, 2011',
+            '3',
+            'Balto',
+            'Dog',
+            'Siberian Husky',
+            'Sep 2, 1919',
+            '4',
+            'Salem',
+            'Cat',
+            'Bombay',
+            'Oct 31, 1924',
+        ])
 
         # delete a dog
 

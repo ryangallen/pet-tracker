@@ -6,7 +6,8 @@
         What type of animal would you like to add?
 
         <ul>
-            <li class="button-big" ng-click="form.pet.animal=animal"
+            <li id="add-[[ animal.name | slugify ]]" class="button-big"
+                ng-click="form.pet.animal=animal"
                 ng-repeat="animal in animals | orderBy: 'name'">
                 [[ animal.name ]]
             </li>
@@ -18,7 +19,8 @@
         What breed?
 
         <ul>
-            <li class="button-big" ng-click="form.pet.breed=breed"
+            <li id="add-[[ breed.name | slugify ]]" class="button-big"
+                ng-click="form.pet.breed=breed"
                 ng-repeat="breed in form.pet.animal.breeds | orderBy: 'name'">
                 [[ breed.name ]]
             </li>
@@ -38,20 +40,21 @@
         </p>
         <p>
             <label>Name</label>
-            <input type="text" ng-model="form.pet.name" autofocus>
+            <input type="text" id="add-name" ng-model="form.pet.name" autofocus>
             <div class="error" ng-repeat="error in form.errors.name">
                 [[ error ]]
             </div>
         </p>
         <p>
             <label>Birthday</label>
-            <input type="date" ng-model="form.pet.birthday">
+            <input type="date" id="add-birthday" ng-model="form.pet.birthday">
             <div class="error" ng-repeat="error in form.errors.birthday">
                 [[ error ]]
             </div>
         </p>
         <p class="clearfix">
-            <button class="button right" ng-click="saveNewPet()">Save</button>
+            <button id="save-new-pet" class="button right"
+                    ng-click="saveNewPet()">Save</button>
         </p>
     </form>
 
