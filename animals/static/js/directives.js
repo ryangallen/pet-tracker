@@ -81,6 +81,8 @@ petTrackerDirectives
                         scope.form.errors = {};
                         if (!scope.form.pet.name)
                             scope.form.errors.name = ["A name is required"];
+                        if (scope.form.pet.name.length > 30)
+                            scope.form.errors.name = ["The name is can be no more than 30 characters"];
                         if (!scope.form.pet.birthday)
                             scope.form.errors.birthday = ["A birthday is required"];
                         if (!_.isEmpty(scope.form.errors)) return;
