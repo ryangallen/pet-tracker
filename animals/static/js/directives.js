@@ -77,6 +77,13 @@ petTrackerDirectives
                         scope.clearForm();
                     }
 
+                    scope.back = function(){
+                        if (scope.form.pet.breed)
+                            scope.form.pet.breed = null;
+                        else if (scope.form.pet.animal)
+                            scope.form.pet.animal = null;
+                    }
+
                     scope.saveNewPet = function(){
                         scope.form.errors = {};
                         if (!scope.form.pet.name)

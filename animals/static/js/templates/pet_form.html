@@ -1,6 +1,10 @@
-<div class="container small-width">
-    <i class="fa fa-times right" title="Cancel new pet"
-       ng-click="cancelNewPet()"></i>
+<div id="pet-form" class="container small-width">
+    <div class="right">
+        <i class="fa fa-arrow-left" title="Back" ng-click="back()"
+           ng-hide="!form.pet.animal"></i>
+        <i class="fa fa-times" title="Cancel new pet"
+           ng-click="cancelNewPet()"></i>
+    </div>
 
     <div id="choose-animal" class="text-center" ng-show="!form.pet.animal">
         What type of animal would you like to add?

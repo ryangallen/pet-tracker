@@ -18,6 +18,9 @@ form.small-width {
 form.small-width input[type="text"], form.small-width input[type="password"]{
     width: 100%;
 }
+form input[type="text"][disabled="disabled"]{
+    color: #a8a8a8;
+}
 form div.error{
     color: #e74c3c;
     margin: -1em 0 -.5em;
@@ -46,6 +49,9 @@ li.not-showing{
 }
 button#add-pet{
     margin: 1.3em 0;
+}
+#pet-form .fa-arrow-left{
+    margin-right: .3em;
 }
 table#pets th, table#pets td{
     padding: .5rem;
