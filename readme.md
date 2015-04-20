@@ -1,4 +1,8 @@
-## Challenge
+## Pet Tracker
+
+A demo app built with Django and AngularJS, and Django Rest Framework for the API.
+
+### Scenario/Requirements
 
 A pet store decides they want a way to keep track of their dogs and cats.
 They said they want to be able to store these attributes:
@@ -6,8 +10,6 @@ They said they want to be able to store these attributes:
 * name
 * breed
 * birthday
-
-In addition, names are no longer than 30 characters and breed is no longer than 50 characters.
 
 The petstore wants to be able to:
 
@@ -20,12 +22,6 @@ The petstore wants to be able to:
 * add a cat
 * delete a dog
 * delete a cat
-
-As being part of the team that makes this system, you must create a Django
-project that has endpoints that can provide these functionalities.  Ideally,
-Django Rest Framework should be used.
-
-## Solution
 
 ### Environment
 
