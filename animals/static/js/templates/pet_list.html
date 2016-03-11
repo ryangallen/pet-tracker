@@ -5,13 +5,16 @@
         <ul class="inline-list left" ng-if="pets.length">
             <li>Showing:</li>
             <li id="toggle-showing-[[ animal.name | lowercase ]]s"
-                ng-repeat="animal in animals" ng-click="animal.showing=!animal.showing"
-                ng-class="{'showing': animal.showing, 'not-showing': !animal.showing}">
+                ng-repeat="animal in animals"
+                ng-click="animal.showing=!animal.showing"
+                ng-class="{'showing': animal.showing,
+                           'not-showing': !animal.showing}">
                 [[ animal.name ]]s
             </li>
         </ul>
 
-        <button id="add-pet" class="button primary right" ng-click="addingPet=true">
+        <button id="add-pet" class="button primary right"
+                ng-click="addingPet=true">
             <i class="fa fa-plus"></i> Add a pet
         </button>
     </div>
