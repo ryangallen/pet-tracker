@@ -11,7 +11,7 @@ They said they want to be able to store these attributes:
 * breed
 * birthday
 
-The petstore wants to be able to:
+The pet store wants to be able to:
 
 * list all pets
 * list all dogs
