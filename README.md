@@ -48,7 +48,7 @@ The pet store wants to be able to:
 ### Confirm delete animal (blank)
 ![Confirm delete animal (blank)](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/11-confirm-delete-animal-blank.png)
 ### Confirm delete animal (name entered)
-![Confirm delete animal (name entered)](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/12-confirm-delete-animal-name-enetered.png
+![Confirm delete animal (name entered)](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/12-confirm-delete-animal-name-enetered.png)
 
 ## Dev Environment
 
