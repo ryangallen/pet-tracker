@@ -23,7 +23,22 @@ The pet store wants to be able to:
 * delete a dog
 * delete a cat
 
-## Environment
+## Screenshots
+
+![Login](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/00-login.png)
+![Dashboard](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/01-dashboard.png)
+![Dashboard filtered](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/02-dashboard-filtered.png)
+![Add a pet](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/04-add-a-pet.png)
+![Select animal type](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/05-select-animal-type.png)
+![Select animal breed](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/06-select-animal-breed.png)
+![Animal details form](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/07-animal-details-form.png)
+![Animal added](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/08-animal-added.png)
+![Animal details](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/09-animal-details.png)
+![Delete animal](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/10-delete-animal.png)
+![Confirm delete animal (blank)](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/11-confirm-delete-animal-blank.png)
+![Confirm delete animal (name entered)](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/12-confirm-delete-animal-name-enetered.png
+
+## Dev Environment
 
 This application is designed to run in a Python 3.4
 [virtualenv](https://virtualenv.pypa.io/en/latest/).
