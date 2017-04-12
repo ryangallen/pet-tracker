@@ -25,17 +25,29 @@ The pet store wants to be able to:
 
 ## Screenshots
 
+### Login
 ![Login](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/00-login.png)
+### Dashboard
 ![Dashboard](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/01-dashboard.png)
+### Dashboard filtered
 ![Dashboard filtered](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/02-dashboard-filtered.png)
+### Add a pet
 ![Add a pet](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/04-add-a-pet.png)
+### Select animal type
 ![Select animal type](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/05-select-animal-type.png)
+### Select animal breed
 ![Select animal breed](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/06-select-animal-breed.png)
+### Animal details form
 ![Animal details form](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/07-animal-details-form.png)
+### Animal added
 ![Animal added](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/08-animal-added.png)
+### Animal details
 ![Animal details](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/09-animal-details.png)
+### Delete animal
 ![Delete animal](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/10-delete-animal.png)
+### Confirm delete animal (blank)
 ![Confirm delete animal (blank)](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/11-confirm-delete-animal-blank.png)
+### Confirm delete animal (name entered)
 ![Confirm delete animal (name entered)](https://github.com/ryangallen/pet-tracker/blob/eef3c39ad7c32a35e8f878d1267389789f4b212f/12-confirm-delete-animal-name-enetered.png
 
 ## Dev Environment
